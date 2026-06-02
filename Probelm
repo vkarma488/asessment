@@ -1,0 +1,32 @@
+Congratulations on joining the Lost Alley Coffee Syndicate, an organisation dedicated to
+promoting coffee literacy. It is your responsibility to build out their cloud infrastructure, securely
+and reliably.
+Your first task has arrived and it is to deploy the application that is described below.
+
+Architecture
+The application consists of:
+● A backend API served over HTTP .
+● The API stack is written in Typescript using Express.js.
+● Data is stored in a flatfile database on the local disk.
+● Development is in the early stages and the app is yet to follow a monolithic or microservice
+approach.
+The goals of the task are:
+● The solution scales to demand. There are a small-but-growing number of API users and
+they are all located within Australia.
+● It is highly available and performant.
+● Solution is secure and cost effective.
+● The deployment process is relatively simple and allows for fast deployment.
+● Consider how the data could be stored and managed differently as the app scales.
+Please present how you would approach this task and what considerations would need to be made
+when building this solution.
+
+Hands on
+The first iteration of the app is complete, and the source code (including an uploaded Docker
+image) is available at https://github.com/medipass/coffee-dictionary. Based on the requirements
+above, prepare to show us how you would deploy the application to AWS. The app does not
+require an external database, and therefore it is not necessary to deploy a database server. The
+solution should be pseudo code - avoid spending your money creating real resources in AWS.
+Only spend as much time as you feel comfortable doing so - ideally up to an hour. We're looking at
+a practical demonstration of your ability to use AWS and you're open to approach the challenge
+how you see fit. There is no need to complete all the requirements, however, later when we chat
+about the strengths and weaknesses of the solution, we'll ask you to evaluate the gaps too.
