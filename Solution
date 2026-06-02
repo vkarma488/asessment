@@ -1,0 +1,38 @@
+Solution HLD
+
+## 1. Architecture Overview
+
+```
+ 
+Internet (AU users)
+        │
+        ▼
+  ┌─────────────────────────────────────────────────┐
+  │  App Load Balancer                              │
+  │                                                 │
+  └───────┬──────────────┬──────────────┬───────────┘
+          │              │              │
+          ▼              ▼              ▼
+  ┌──────────┐   ┌──────────┐   ┌──────────┐
+  │ ECS      │   │ ECS Task │   │ ECS Task │  ← Fargate (auto-scaling 2–10)
+  │          │   │          │   │          │
+  │          │   │          │   │          │
+  └────┬─────┘   └────┬─────┘   └────┬─────┘
+       │              │              │
+       └──────────────┴──────────────┘
+                         │
+                         ▼
+              ┌─────────────────────┐
+              │  Amazon EFS         │
+              │  (flat-file DB)     │
+              │                     │
+              └─────────────────────┘
+```
+
+
+- ECR – Docker image registry
+- CloudWatch – logs, 
+- Secrets Manager – API keys
+- S3 – ALB access logs, Terraform state
+- DynamoDB – Terraform state locking
+- Route 53 – DNS
